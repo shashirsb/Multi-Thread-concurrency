@@ -1,4 +1,4 @@
-# 🛠️ MongoDB Job Scheduler Worker
+# 🛠️ MongoDB Job Scheduler Worker with Pessimistic Locking
 
 This project is a **MongoDB-backed job scheduler worker**, built in Python, designed for distributed systems. It automatically picks up pending jobs, processes them, and handles stale or orphaned jobs safely.
 
