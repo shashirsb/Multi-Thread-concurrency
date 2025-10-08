@@ -1,0 +1,42 @@
+<body>
+    <h1>Scheduler Job Dashboard</h1>
+
+    <h2>📊 Overall Job Summary</h2>
+    <table class="summary-table">
+        <tbody>
+            <tr><td><strong>Total Jobs:</strong></td><td>{{ total_jobs }}</td></tr>
+            <tr><td><strong>Locked (in progress):</strong></td><td>{{ locked_jobs }}</td></tr>
+            <tr><td><strong>Completed:</strong></td><td>{{ completed_jobs }}</td></tr>
+            <tr><td><strong>Pending:</strong></td><td>{{ pending_jobs }}</td></tr>
+        </tbody>
+    </table>
+
+    {% if worker_status %}
+        <h2>👷 Worker Status Summary</h2>
+        <table class="summary-table">
+            <thead>
+                <tr>
+                    <th>Worker ID</th>
+                    <th>Status</th>
+                    <th>Locked</th>
+                    <th>Completed</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for worker_id, status in worker_status.items() %}
+                    <tr>
+                        <td>{{ worker_id }}</td>
+                        <td class="status-{{ status }}">
+                            {% if status == 'ok' %}
+                                ✅ No duplicates
+                            {% else %}
+                                ❌ Duplicate scheduler IDs
+                            {% endif %}
+                        </td>
+                        <td>{{ worker_counters[worker_id]["locked"] }}</td>
+                        <td>{{ worker_counters[worker_id]["completed"] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
