@@ -5,7 +5,7 @@ from pymongo import MongoClient
 from pymongo.errors import PyMongoError
 
 # Constants
-MONGO_URI = "mongodb+srv://main_user:main_user1@cluster0.kssen.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+MONGO_URI = "mongodb+srv://main_user:<password>@cluster0.kssen.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 DB_NAME = "scheduler_demo"
 COLLECTION_NAME = "jobs"
 PROCESSING_TIME = 1  # seconds to simulate job processing

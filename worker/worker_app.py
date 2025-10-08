@@ -4,7 +4,7 @@ from datetime import datetime
 from pymongo import MongoClient, ReturnDocument
 
 # MongoDB connection string (update this as needed)
-MONGO_URI = "mongodb+srv://main_user:main_user1@cluster0.kssen.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+MONGO_URI = "mongodb+srv://main_user:<password>@cluster0.kssen.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 DB_NAME = "scheduler_demo"
 COLLECTION_NAME = "jobs"
 
